@@ -24,11 +24,9 @@
 <<非公開プロトタイプ定義>>
 -----------------------------------------------------------------------------**/
 /*static */
-void Send_0(void);
-void Send_1(void);
-void DelayT0H(void);
-void DelayT0L(void);
-void DelayT1H(void);
-void DelayT1L(void);
+static void Send_0(void);
+static void Send_1(void);
+static void DelayT0H(void);
+static void DelayT1H(void);
 
 #endif /*_OST45050C1A_W_PRIVATE_H_*/

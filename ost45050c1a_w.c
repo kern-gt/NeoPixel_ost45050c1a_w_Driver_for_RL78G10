@@ -31,8 +31,8 @@
 /***公開関数*******************************************************************/
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ＊　関数名　： Init_NeoPixel
-＊　機能　　：
-＊　引数　　：
+＊　機能　　： カラー構造体の０初期化
+＊　引数　　： カラー構造体ポインタ
 ＊　戻り値　：
 ＊　備考　　：
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**/
@@ -49,11 +49,11 @@ void Init_NeoPixel(ColorNeoPixel_t *self){
 }
 
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-＊　関数名　：
-＊　機能　　：
-＊　引数　　：
+＊　関数名　：RefreshNeoPixel
+＊　機能　　：LEDへのデータ送信
+＊　引数　　：カラー構造体ポインタ
 ＊　戻り値　：
-＊　備考　　：
+＊　備考　　：送信中は割込み禁止状態
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**/
 void RefreshNeoPixel(ColorNeoPixel_t *data)
 {
@@ -215,12 +215,11 @@ void RefreshNeoPixel(ColorNeoPixel_t *data)
 ＊　戻り値　：
 ＊　備考　　：
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**/
-void Send_0(void)
+static void Send_0(void)
 {
-	PIXEL_SEND_PIN = 1U;
+	PIXEL_DATA_SEND_PIN = 1U;
 	DelayT0H();
-	PIXEL_SEND_PIN = 0U;
-	//DelayT0L();
+	PIXEL_DATA_SEND_PIN = 0U;
 }
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ＊　関数名　：
@@ -229,12 +228,11 @@ void Send_0(void)
 ＊　戻り値　：
 ＊　備考　　：
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**/
-void Send_1(void)
+static void Send_1(void)
 {
-	PIXEL_SEND_PIN = 1U;
+	PIXEL_DATA_SEND_PIN = 1U;
 	DelayT1H();
-	PIXEL_SEND_PIN = 0U;
-	//DelayT1L();
+	PIXEL_DATA_SEND_PIN = 0U;
 }
 
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -245,27 +243,27 @@ void Send_1(void)
 ＊　備考　　：
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~**/
 #pragma inline_asm DelayT0H
-void DelayT0H(void)
+static void DelayT0H(void)
 {
-	nop
-	nop
-	nop
-	nop
+	NOP
+	NOP
+	NOP
+	NOP
 }
 
 #pragma inline_asm DelayT1H
-void DelayT1H(void)
+static void DelayT1H(void)
 {
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
-	nop
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
+	NOP
 }
 
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

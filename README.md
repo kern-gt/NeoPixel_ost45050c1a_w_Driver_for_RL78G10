@@ -1,1 +1,1 @@
-# NeoPixel_ost45050c1a_w_Driver_for_RX
+# NeoPixel_ost45050c1a_w_Driver_for_RL78G10
