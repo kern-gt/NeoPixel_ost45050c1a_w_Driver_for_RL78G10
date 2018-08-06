@@ -1,0 +1,42 @@
+-Input=DefaultBuild\cstart.obj
+-Input=DefaultBuild\r_cg_main.obj
+-Input=DefaultBuild\r_cg_systeminit.obj
+-Input=DefaultBuild\r_cg_cgc.obj
+-Input=DefaultBuild\r_cg_cgc_user.obj
+-Input=DefaultBuild\r_cg_wdt.obj
+-Input=DefaultBuild\r_cg_wdt_user.obj
+-Input=DefaultBuild\r_cg_sau.obj
+-Input=DefaultBuild\r_cg_sau_user.obj
+-Input=DefaultBuild\ost45050c1a_w.obj
+-Input=DefaultBuild\r_cg_port.obj
+-Input=DefaultBuild\r_cg_port_user.obj
+-Input=DefaultBuild\r_cg_it.obj
+-Input=DefaultBuild\r_cg_it_user.obj
+-Input=DefaultBuild\user_main.obj
+-SECURITY_ID=00000000000000000000
+-DEVICE=C:\Program Files (x86)\Renesas Electronics\CS+\CC\Device\RL78\Devicefile\DR5F10Y47.DVF
+-DEBug
+-NOCOmpress
+-NOOPtimize
+-OUtput=DefaultBuild\neo_pixel_driver.abs
+-LIBrary=C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.06.00\lib\rl78nm4s.lib
+-LIBrary=C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.06.00\lib\malloc_n.lib
+-LIBrary=C:\Program Files (x86)\Renesas Electronics\CS+\CC\CC-RL\V1.06.00\lib\rl78nm4r.lib
+-OCDBG=85
+-DEBUG_MONITOR
+-USER_OPT_BYTE=FFFFF9
+-RRM=FFEDC
+-LISt=DefaultBuild\neo_pixel_driver.map
+-STARt=DEBUG_MONITOR1/00002,ONCHIP_OPTION_BYTE/000C3,SECURITY_ID_SECTION/000C4,DEBUG_MONITOR2/000CE,.const,.text,.RLIB,.SLIB,.textf,.constf,.data,.sdata/000D8,.dataR,.bss/FFCE0,.sdataR,.sbss/FFE20
+-ROm=.data=.dataR
+-ROm=.sdata=.sdataR
+-NOMessage
+-MEMory=High
+-NOLOgo
+-end
+-Input=DefaultBuild\neo_pixel_driver.abs
+-OUtput=DefaultBuild\neo_pixel_driver.mot
+-FOrm=Stype
+-NOMessage
+-exit
+
